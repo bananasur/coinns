@@ -17,21 +17,22 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 20.x
+        node-version: 18.x
+
+    - name: Check versions
+      run: |
+        node -v
+        npm -v
 
     - name: Deploy
       uses: appleboy/ssh-action@v1.0.0
       with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
         host: 20.48.90.191
         username: MBCcoin
         password: tradingCoin123
         port: 22
         script: |
           cd /home/coinns
-          sudo npm cache clean -f
-          sudo npm install -g n
-          sudo n stable
           sudo git pull origin main 
           npm install 
           npm run build 
