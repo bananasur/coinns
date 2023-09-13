@@ -33,3 +33,4 @@ jobs:
           npm install 
           npm run build 
           nohup npm start &
+          
