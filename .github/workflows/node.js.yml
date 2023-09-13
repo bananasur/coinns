@@ -19,12 +19,7 @@ jobs:
       with:
         node-version: 18.x
 
-    - name: Install Dependencies
-      run: yarn install
-
-    - name: Build
-      run: yarn build
-
+    
     - name: Deploy
       uses: appleboy/ssh-action@v1.0.0
       with:
@@ -34,6 +29,7 @@ jobs:
         password: tradingCoin123
         port: 22
         script: |
+          kill $(lsof -t -i:3000)
           cd /home/coinns 
           git pull origin main 
           yarn install 
