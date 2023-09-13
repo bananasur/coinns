@@ -29,6 +29,9 @@ jobs:
         port: 22
         script: |
           cd /home/coinns
+          sudo npm cache clean -f
+          sudo npm install -g n
+          sudo n stable
           sudo git pull origin main 
           npm install 
           npm run build 
