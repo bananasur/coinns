@@ -29,12 +29,11 @@ jobs:
         password: tradingCoin123
         port: 22
         script: |
-          kill $(lsof -t -i:3000)
           cd /home/coinns 
           git pull origin main 
-          yarn install 
-          yarn build 
-          yarn start
+          npm install 
+          npm run build 
+          npm start
           
 
 
