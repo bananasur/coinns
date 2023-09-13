@@ -35,6 +35,3 @@ jobs:
           sudo yarn install 
           sudo yarn build 
           sudo yarn start
-      
-
-
