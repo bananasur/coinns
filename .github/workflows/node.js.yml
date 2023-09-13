@@ -34,7 +34,7 @@ jobs:
         password: tradingCoin123
         port: 22
         script: |
-          cd /home/cominns 
+          cd /home/coinns 
           git pull origin main 
           yarn install 
           yarn build 
